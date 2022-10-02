@@ -7,7 +7,9 @@ This program simulates the execution of N moves to calculate the probabilities o
 
 # How to make & play
 
-## Windows
-    make montly_hall.cpp
+## Windows (using mingw64)
+    g++.exe -g .\monty_hall.cpp -o .\monty_hall.exe
     ./montly_hall.exe 100
 ## Linux
+    g++ monty_hall.cpp -o monty_hall
+    ./monty_hall 100
