@@ -163,5 +163,7 @@ int main(int argc, char** argv) {
     cout << "\nSmart players winners (" << result.perSmartWinners << "%): " << result.smartPlayerWinners;
     cout << "\nCommon players winners (" << result.perCommonWinners << "%): " << result.commonPlayerWinners;
 
+    cout << "\nThanks for play :)";
+
     return 0;
 }
