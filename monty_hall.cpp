@@ -10,6 +10,7 @@
 #include <limits>
 #include <stdlib.h>
 #include <time.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -71,11 +72,11 @@ class Game {
         struct Stadistics {
             long long games = 0;    // Total games
 
-            int smartPlayers = 0;   // Quantity of smart players
-            int commonPlayers = 0;  // Quantity of common players
+            long long smartPlayers = 0;   // Quantity of smart players
+            long long commonPlayers = 0;  // Quantity of common players
 
-            int smartPlayerWinners = 0;   // Quantity of smart player winners
-            int commonPlayerWinners = 0;  // Quantity of common player winners
+            long long smartPlayerWinners = 0;   // Quantity of smart player winners
+            long long commonPlayerWinners = 0;  // Quantity of common player winners
 
             float perSmartPlayers = 0;  // Percentage of smart players
             float perCommonPlayers = 0;  // Percentage of common players
@@ -84,11 +85,11 @@ class Game {
             float perCommonWinners = 0; // Percentage of smart player winners
 
             void calculate() {
-                perSmartPlayers = games * smartPlayers / 100;
-                perCommonPlayers = games * commonPlayers / 100;
+                perSmartPlayers = (smartPlayers / (float)games) * 100;
+                perCommonPlayers = (commonPlayers / (float)games) * 100;
 
-                perSmartWinners = 100 * smartPlayerWinners / smartPlayers;
-                perCommonWinners = 100 * commonPlayerWinners / commonPlayers;
+                perSmartWinners = (smartPlayerWinners / (float)smartPlayers) * 100;
+                perCommonWinners = (commonPlayerWinners / (float)commonPlayers) * 100;
             }
         };
 
@@ -153,6 +154,7 @@ int main(int argc, char** argv) {
 
     // run the game
     Game::Stadistics result = game.play(runs);
+    std::cout.precision(5);
 
     cout << "Game stadistics:\n\n";
     cout << "Total games: " << result.games;
