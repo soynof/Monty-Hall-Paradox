@@ -1,7 +1,7 @@
 /*
     Autor: Nof
     Date: 30/09/2022
- 
+    Repository: https://github.com/soynof/monty-hall-paradox
     Description: Simulator of the game "Monty Hall" with a random generator.
 */
 
